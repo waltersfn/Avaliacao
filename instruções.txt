@@ -1,0 +1,54 @@
+﻿Instruções:
+
+Dependências:
+-Versão v10.19.0 do Node.js
+-Versão 6.13.7 ou superior do NPM.
+
+Instalação: 
+-Digite "npm install" no terminal  
+-Após a instalação das dependências, execute "sequelize db:migrate" para criar o banco de dados.
+-Em seguida, para executar a api, digite "node index.js"
+
+Usuários:
+-Cadastro de usuários:
+        Post request:  http://localhost:3333/user
+     
+    Body da requisição:  
+    {
+	    "login": "<login de usuário>",
+	    "password": "<senha de usuário>"
+    }
+
+-Login de usuários:
+        Post request: http://localhost:3333/authenticate
+
+    Body da requisição:
+    {
+	    "login": "<login de usuário>",
+	    "password": "<senha de usuário>"
+    }
+
+A partir desse ponto você precisará do token(antecedido de 'bearer') para continuar usando a api.
+
+Caixa:
+-Valor total: GET http://localhost:3333/caixa
+-Valor por data: GET http://localhost:3333/caixa/data/:data
+-Valor total: GET http://localhost:3333/categoria/:categoria/:type
+
+Categoria:
+-Buscar todas as categorias: GET http://localhost:3333/categoria
+-Nova categoria: Post http://localhost:3333/categoria
+-Excluir categoria: DELETE http://localhost:3333/categoria/:id
+-Buscar por descrição: GET http://localhost:3333/categoria/:descricao
+
+Pagamento:
+-Busca todos os pagentos: GET http://localhost:3333/pagamento
+-Novo pagamento: Post http://localhost:3333/pagamento (informe os campos "descricao", "valor" e "categoria" para a criação)
+-Excluir pagamento: DELETE http://localhost:3333/pagamento/:id
+-Buscar por data: GET http://localhost:3333/pagamento/data/:data
+
+Recebimento:
+-Busca todos os recebimentos: GET http://localhost:3333/recebimento
+-Novo recebimento: Post http://localhost:3333/recebimento (informe os campos "descricao", "valor" e "categoria" para a criação)
+-Excluir recebimento: DELETE http://localhost:3333/recebimento/:id
+-Buscar por data: GET http://localhost:3333/recebimento/data/:data
